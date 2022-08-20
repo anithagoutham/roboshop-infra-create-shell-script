@@ -30,4 +30,3 @@ else
   COMPONENT=$1
   create_ec2
 fi
-
