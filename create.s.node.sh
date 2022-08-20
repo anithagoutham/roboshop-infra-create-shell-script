@@ -16,7 +16,7 @@ create_ec2() {
       --instance-market-options "MarketType=spot,SpotOptions={SpotInstanceType=persistent,InstanceInterruptionBehavior=stop}"\
       --security-group-ids ${SGID} \
       | jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
-
+       echo server ip address = ${private_ip}
 
 }
 
