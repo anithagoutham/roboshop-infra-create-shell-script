@@ -26,6 +26,5 @@ SGID=$(aws ec2 describe-security-groups --filters Name=group-name,Values=${SG_NA
 
 
   for component in catalogue cart user shipping payment frontend mongodb mysql rabbitmq redis ; do
-    COMPONENT="$component-${env}"
     create_ec2
   done
