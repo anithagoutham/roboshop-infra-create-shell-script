@@ -27,8 +27,8 @@ AMI_ID=$(aws ec2 describe-images --filters "Name=name,Values=Centos-7-DevOps-Pra
 SGID=$(aws ec2 describe-security-groups --filters Name=group-name,Values=${SG_NAME} | jq  '.SecurityGroups[].GroupId' | sed -e 's/"//g')
 
 
-for component in catalogue cart user shipping payment frontend mongodb mysql rabbitmq redis dispatch; do
-  COMPONENT="${COMPONENT}-${ENV}"
+for component in catalogue ; do
+  COMPONENT="${component}-${ENV}"
   create_ec2
 done
 
